@@ -1,0 +1,19 @@
+#nav-mobile {
+  padding-right: 20px;
+}
+
+.row {
+  /*width: 100%;*/
+}
+
+.MenuComponent {
+  /*width: 50%;*/
+}
+
+.OrderFormComponent {
+  width: inherit;
+}
+
+#cards {
+  /*width: 100%;*/
+}
