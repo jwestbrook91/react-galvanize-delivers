@@ -8,8 +8,9 @@ storiesOf('MenuItemComponent', module)
   .add('Complete item passed in', () =>
     <MenuItemComponent
       item={{
+        id: 1,
         name: 'Some Item A',
-        price: 9.99,
+        price: 7.99,
         imagePath: '//via.placeholder.com/300x200'
       }}
     />

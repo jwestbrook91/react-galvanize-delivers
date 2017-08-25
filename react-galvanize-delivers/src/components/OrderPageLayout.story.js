@@ -11,27 +11,27 @@ storiesOf('OrderPageLayout', module).add('Happy Path', () =>
     <MenuComponent
       items={[
         {
-          id: 101,
+          id: 1,
           name: 'Some Item A',
-          price: 9.99,
+          price: 7.99,
           imagePath: '//via.placeholder.com/300x200'
         },
         {
-          id: 102,
+          id: 2,
           name: 'Some Item B',
-          price: 9.99,
+          price: 10.99,
           imagePath: '//via.placeholder.com/300x200'
         },
         {
-          id: 103,
+          id: 3,
           name: 'Some Item C',
-          price: 9.99,
+          price: 6.99,
           imagePath: '//via.placeholder.com/300x200'
         },
         {
-          id: 104,
+          id: 4,
           name: 'Some Item D',
-          price: 100,
+          price: 12.99,
           imagePath: '//via.placeholder.com/300x200'
         }
       ]}

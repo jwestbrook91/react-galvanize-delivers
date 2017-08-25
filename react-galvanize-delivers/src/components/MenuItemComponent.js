@@ -12,7 +12,7 @@ export default function MenuItemComponent({ item }) {
           {item.name || 'N/A'}
         </h5>
         <p>
-          {item.price ? `$${item.price.toFixed(2)}` : 'N/A'}
+          {item.price && typeof item.price === 'number' ? `$${item.price.toFixed(2)}` : 'N/A'}
         </p>
       </div>
       <div className="card-action">

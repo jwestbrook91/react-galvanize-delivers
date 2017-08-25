@@ -1,8 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import MenuComponent from './MenuComponent';
+import OrderPage from './OrderPage';
 
-import './MenuComponent.story.css';
+let customerInfo = {
+  id: 0,
+  name: 'Nestor Toro',
+  phone: '(650) 533-8676',
+  address: '123 Main Street, Oakland, CA'
+};
 
 let menuItems = [
   {
@@ -30,4 +35,7 @@ let menuItems = [
     imagePath: '//via.placeholder.com/300x200'
   }
 ];
-storiesOf('MenuComponent', module).add('Happy Path', () => <MenuComponent items={menuItems} />);
+
+const orderItems = [];
+
+storiesOf('OrderPage', module).add('Happy Path', () => <OrderPage menuItems={menuItems} orderItems={orderItems} customerInfo={customerInfo} />);
