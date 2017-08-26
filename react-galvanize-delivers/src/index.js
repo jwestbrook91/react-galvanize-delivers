@@ -36,7 +36,20 @@ let menuItems = [
     imagePath: '//via.placeholder.com/300x200'
   }
 ];
+const orderItem = [];
 
-const orderItems = [];
-
-ReactDOM.render(<OrderPage menuItems={menuItems} orderItems={orderItems} customerInfo={customerInfo} />, document.getElementById('root'));
+function onAddItem(itemId) {
+  orderItem.push(
+    menuItems.find(a => {
+      return menuItems.id === itemId;
+    })
+  );
+  render();
+}
+function render() {
+  ReactDOM.render(
+    <OrderPage menuItems={menuItems} onAddItem={onAddItem} orderItems={orderItem} customerInfo={customerInfo} />,
+    document.getElementById('root')
+  );
+}
+render();

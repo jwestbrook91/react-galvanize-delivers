@@ -1,8 +1,13 @@
 import React from 'react';
 export default function OrderTableComponent({ items }) {
-  let subtotal = items.reduce(function(sum, item) {
-    return (sum += item.price);
-  }, 0);
+  console.log('this is items', items);
+  let subtotal = 0;
+
+  if (items.length !== 0) {
+    subtotal = items.reduce(function(sum, item) {
+      return (sum += item.price);
+    }, 0);
+  }
 
   const taxRate = 0.08;
   const tax = (subtotal * taxRate).toFixed(2);

@@ -6,5 +6,6 @@ function loadStories() {
   require('../src/components/OrderTableComponent.story');
   require('../src/components/OrderFormComponent.story');
   require('../src/components/OrderPageLayout.story');
+  require('../src/components/OrderPage.story');
 }
 configure(loadStories, module);

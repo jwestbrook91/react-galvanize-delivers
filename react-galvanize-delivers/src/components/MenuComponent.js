@@ -1,12 +1,9 @@
 import React from 'react';
-import MenuItemComponent from './MenuItemComponent'
-export default function MenuComponent({items}) {
-
+import MenuItemComponent from './MenuItemComponent';
+export default function MenuComponent({ items, onAddItem }) {
   return (
-
-  <div className="MenuComponent">
-    {items.map(item => <MenuItemComponent key={item.id} item={item} />
-    )}
-  </div>
-);
+    <div className="MenuComponent">
+      {items.map(item => <MenuItemComponent key={item.id} item={item} onAddItem={onAddItem} />)}
+    </div>
+  );
 }
