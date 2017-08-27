@@ -1,17 +1,13 @@
 import React from 'react';
 export default function OrderTableComponent({ items }) {
   let subtotal = 0;
-
-  console.log('these are my items', items);
-  if (items.length !== 0) {
-    subtotal += items.reduce(function(sum, value) {
-      return sum + value;
-    });
+  let tax = 0;
+  let total = 0;
+  for (let item of items) {
+    subtotal += item.price;
   }
-
-  const taxRate = 0.08;
-  const tax = (subtotal * taxRate).toFixed(2);
-  const totalPrice = subtotal + Number(tax);
+  tax = subtotal * 0.09;
+  total = subtotal + tax;
 
   return (
     <div className="OrderTableComponent">
@@ -28,13 +24,13 @@ export default function OrderTableComponent({ items }) {
           </tr>
         </thead>
         <tbody>
-          {items.map(orderItem =>
-            <tr key={orderItem.id}>
+          {items.map((item, index) =>
+            <tr key={index}>
               <td>
-                {orderItem.name}
+                {item.name}
               </td>
               <td>
-                {orderItem.price}
+                {item.price}
               </td>
             </tr>
           )}
@@ -55,7 +51,7 @@ export default function OrderTableComponent({ items }) {
           <tr>
             <td style={{ textAlign: 'right' }}>Total</td>
             <td id="total" className="center">
-              {totalPrice}
+              {total}
             </td>
           </tr>
         </tfoot>
