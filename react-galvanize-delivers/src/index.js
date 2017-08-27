@@ -46,10 +46,10 @@ function onAddItem(itemId) {
   );
   render();
 }
+render();
 function render() {
   ReactDOM.render(
     <OrderPage menuItems={menuItems} onAddItem={onAddItem} orderItems={orderItem} customerInfo={customerInfo} />,
     document.getElementById('root')
   );
 }
-render();
