@@ -3,6 +3,7 @@ export default function OrderTableComponent({ items }) {
   let subtotal = 0;
   let tax = 0;
   let total = 0;
+
   for (let item of items) {
     subtotal += item.price;
   }
