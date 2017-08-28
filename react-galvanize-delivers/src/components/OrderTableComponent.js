@@ -1,14 +1,13 @@
 import React from 'react';
-export default function OrderTableComponent({ items }) {
+export default function OrderTableComponent({ orderItems }) {
   let subtotal = 0;
-  let tax = 0;
-  let total = 0;
-
-  for (let item of items) {
-    subtotal += item.price;
+  if (orderItems) {
+    orderItems.reduce(function(sum, item) {
+      return (subtotal = sum + item.price);
+    }, 0);
   }
-  tax = subtotal * 0.09;
-  total = subtotal + tax;
+  let tax = subtotal * 0.09;
+  let total = subtotal + tax;
 
   return (
     <div className="OrderTableComponent">
@@ -25,34 +24,36 @@ export default function OrderTableComponent({ items }) {
           </tr>
         </thead>
         <tbody>
-          {items.map((item, index) =>
-            <tr key={index}>
-              <td>
-                {item.name}
-              </td>
-              <td>
-                {item.price}
-              </td>
-            </tr>
-          )}
+          {orderItems
+            ? orderItems.map(item =>
+                <tr key={item.id}>
+                  <td>
+                    {item.name}
+                  </td>
+                  <td>
+                    {item.price}
+                  </td>
+                </tr>
+              )
+            : ''}
         </tbody>
         <tfoot id="tfoot">
           <tr>
             <td style={{ textAlign: 'right' }}>Subtotal</td>
             <td id="subtotal" className="center">
-              {subtotal}
+              {`$${subtotal.toFixed(2)}`}
             </td>
           </tr>
           <tr>
             <td style={{ textAlign: 'right' }}>Tax</td>
             <td id="tax" className="center">
-              {tax}
+              {`$${tax.toFixed(2)}`}
             </td>
           </tr>
           <tr>
             <td style={{ textAlign: 'right' }}>Total</td>
             <td id="total" className="center">
-              {total}
+              {`$${total.toFixed(2)}`}
             </td>
           </tr>
         </tfoot>
