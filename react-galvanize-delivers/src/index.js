@@ -30,13 +30,7 @@ let data = {
       price: 12.99,
       imagePath: '//via.placeholder.com/300x200'
     }
-  ],
-  customerInfo: {
-    id: 0,
-    name: 'Nestor Toro',
-    phone: '(650) 533-8676',
-    address: '123 Main Street, Oakland, CA'
-  }
+  ]
 };
 const orderItems = [];
 
@@ -46,9 +40,28 @@ function onAddItem(itemId) {
   render();
 }
 
+function onSubmit({ name, phone, address }) {
+  customerInfo = { name, phone, address };
+  render();
+}
+
+let customerInfo = null;
+
+function closeOrderMessage() {
+  customerInfo = null;
+  render();
+}
+
 function render() {
   ReactDOM.render(
-    <OrderPage menuItems={data.menuItems} onAddItem={onAddItem} orderItems={orderItems} customerInfo={data.customerInfo} />,
+    <OrderPage
+      menuItems={data.menuItems}
+      onAddItem={onAddItem}
+      onClose={closeOrderMessage}
+      onSubmit={onSubmit}
+      orderItems={orderItems}
+      customerInfo={customerInfo}
+    />,
     document.getElementById('root')
   );
 }
