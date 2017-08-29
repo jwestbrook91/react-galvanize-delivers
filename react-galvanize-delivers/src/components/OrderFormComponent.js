@@ -15,7 +15,7 @@ export default class OrderFormComponent extends React.Component {
           </div>
           <div className="input-field">
             <i className="material-icons prefix small">smartphone</i>
-            <input id="phone" type="tel" placeholder="(555)555-5555" />
+            <input id="phone" type="tel" placeholder="Phone Number (Include Area Code)" />
           </div>
           <div className="input-field">
             <i className="material-icons prefix small">home</i>
@@ -25,7 +25,7 @@ export default class OrderFormComponent extends React.Component {
             <i className="material-icons left">local_taxi</i>CHECKOUT
           </button>
           {this.state.hasValidationErrors
-            ? <p style={{ color: 'red', fontWeight: 'bold' }}>You've entered incorrect information. Please make sure all information is correct.</p>
+            ? <p style={{ color: 'red', fontWeight: 'bold' }}>You have entered incorrect information. Please make sure all information is correct.</p>
             : null}
         </form>
       </div>
