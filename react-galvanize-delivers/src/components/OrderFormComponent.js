@@ -11,18 +11,15 @@ export default class OrderFormComponent extends React.Component {
         <form className="OrderFormComponent" onSubmit={this._handleSubmit}>
           <div className="input-field">
             <i className="material-icons prefix small">person</i>
-            <input id="name" type="text" name="name" />
-            <label htmlFor="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Full Name" />
           </div>
           <div className="input-field">
             <i className="material-icons prefix small">smartphone</i>
-            <input id="phone" type="tel" />
-            <label className="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="(555)555-5555" />
           </div>
           <div className="input-field">
             <i className="material-icons prefix small">home</i>
-            <input id="address" type="text" />
-            <label htmlFor="address">Address</label>
+            <input id="address" type="text" placeholder="Address" />
           </div>
           <button id="orderup" className="btn-large center-align orange darken-1">
             <i className="material-icons left">local_taxi</i>CHECKOUT
@@ -45,7 +42,7 @@ export default class OrderFormComponent extends React.Component {
       name.length > 3 &&
       /^[a-zA-Z\s]+/.test(name) &&
       phone.length >= 10 &&
-      phone.length < 12 &&
+      phone.length < 14 &&
       /^[\d(\s][\d-\s)]+$/.test(phone) &&
       address.length > 4 &&
       /^[\d]/.test(address)

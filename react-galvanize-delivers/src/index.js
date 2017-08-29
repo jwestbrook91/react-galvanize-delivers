@@ -32,7 +32,8 @@ let data = {
     }
   ]
 };
-const orderItems = [];
+let orderItems = [];
+let customerInfo = null;
 
 function onAddItem(itemId) {
   orderItems.push(data.menuItems.find(item => item.id === itemId));
@@ -40,15 +41,14 @@ function onAddItem(itemId) {
   render();
 }
 
-function onSubmit({ name, phone, address }) {
+function onSubmitOrderForm({ name, phone, address }) {
   customerInfo = { name, phone, address };
   render();
 }
 
-let customerInfo = null;
-
-function closeOrderMessage() {
+function onCloseOrderSuccessMessage() {
   customerInfo = null;
+  orderItems = [];
   render();
 }
 
@@ -57,8 +57,8 @@ function render() {
     <OrderPage
       menuItems={data.menuItems}
       onAddItem={onAddItem}
-      onClose={closeOrderMessage}
-      onSubmit={onSubmit}
+      onCloseOrderSuccessMessage={onCloseOrderSuccessMessage}
+      onSubmitOrderForm={onSubmitOrderForm}
       orderItems={orderItems}
       customerInfo={customerInfo}
     />,
