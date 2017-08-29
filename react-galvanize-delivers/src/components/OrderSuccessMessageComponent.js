@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function OrderSuccessMessageComponent({ customerInfo = {}, onClose = () => {} }) {
+export default function OrderSuccessMessageComponent({ customerInfo = {}, onCloseOrderSuccessMessage = () => {} }) {
   function handleClick(event) {
-    onClose();
+    onCloseOrderSuccessMessage();
   }
   return (
     <div className="card-panel grey lighten-3 OrderSuccessMessageComponent">
