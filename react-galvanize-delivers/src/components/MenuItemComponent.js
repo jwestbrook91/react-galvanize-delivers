@@ -3,7 +3,6 @@ import React from 'react';
 export default function MenuItemComponent({ item, onAddItem }) {
   function handleClick(event) {
     event.preventDefault();
-    console.log(item.id);
     onAddItem(item.id);
   }
 

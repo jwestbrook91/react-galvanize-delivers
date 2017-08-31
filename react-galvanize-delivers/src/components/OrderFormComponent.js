@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class OrderFormComponent extends React.Component {
+export default class OrderFormComponent extends Component {
   state = {
     hasValidationErrors: false
   };
@@ -35,9 +35,9 @@ export default class OrderFormComponent extends React.Component {
     const { onSubmit } = this.props;
     event.preventDefault();
     const $form = event.target;
-    let name = $form.name.value;
-    let phone = $form.phone.value;
-    let address = $form.address.value;
+    let name = $form.name.value.trim();
+    let phone = $form.phone.value.trim();
+    let address = $form.address.value.trim();
     if (
       name.length > 3 &&
       /^[a-zA-Z\s]+/.test(name) &&

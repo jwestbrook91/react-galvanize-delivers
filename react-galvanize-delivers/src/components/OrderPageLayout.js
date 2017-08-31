@@ -35,7 +35,7 @@ export default function OrderPageLayout(props) {
           <div className="row">
             <div className="col l6 s8 orange-text text-darken-1">
               <h5>Galvanize Delivers</h5>
-              <p class="orange-text text-darken-1">Fine Dining, Delivered</p>
+              <p className="orange-text text-darken-1">Fine Dining, Delivered</p>
             </div>
 
             <div className="col s4">
