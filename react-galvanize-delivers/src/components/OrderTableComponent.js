@@ -25,8 +25,8 @@ export default function OrderTableComponent({ orderItems }) {
         </thead>
         <tbody>
           {orderItems
-            ? orderItems.map(item =>
-                <tr key={item.id}>
+            ? orderItems.map((item, i) =>
+                <tr key={i}>
                   <td>
                     {item.name}
                   </td>
