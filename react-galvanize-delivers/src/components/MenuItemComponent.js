@@ -6,7 +6,7 @@ export default function MenuItemComponent({ item, onAddItem }) {
     onAddItem(item.id);
   }
 
-  if (!item) return null;
+  if (!item) return <h4>'No Items Available'</h4>;
   return (
     <div className="card MenuItemComponent">
       <div className="card-image">
@@ -21,9 +21,9 @@ export default function MenuItemComponent({ item, onAddItem }) {
         </p>
       </div>
       <div className="card-action">
-        <button onClick={handleClick} type="button">
+        <a className="chooseItem" onClick={handleClick} type="button">
           ADD TO ORDER!
-        </button>
+        </a>
       </div>
     </div>
   );
