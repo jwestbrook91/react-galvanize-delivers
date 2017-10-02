@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import OrderPage from '../components/OrderPage';
+import OrderPage from '../../components/OrderPage';
 import { compose, lifecycle } from 'recompose';
 
 import addItemProcess from './thunks/addItemProcess';
